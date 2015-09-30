@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.6.30)  6 JUL 2015 08:35
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.6.30)  30 SEP 2015 21:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -24,7 +24,7 @@ File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-No file LatexUntukPemula.aux.
+(./LatexUntukPemula.aux)
 \openout1 = `LatexUntukPemula.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -40,26 +40,26 @@ LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 8.
+(Font)              <20.74> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 8.
+(Font)              <14.4> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 8.
+(Font)              <12> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 8.
-[1
+(Font)              <7> on input line 16.
+ [1
 
 
 ] [2
 
 ]
-Chapter 1.
+BAB 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 13.
+(Font)              <17.28> on input line 21.
 [3] (./LatexUntukPemula.aux) ) 
 Here is how much of TeX's memory you used:
- 248 strings out of 493918
- 2716 string characters out of 6150563
+ 250 strings out of 493918
+ 2758 string characters out of 6150563
  52172 words of memory out of 5000000
  3656 multiletter control sequences out of 15000+600000
  8866 words of font info for 31 fonts, out of 8000000 for 9000
