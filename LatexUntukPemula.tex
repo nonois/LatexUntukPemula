@@ -241,6 +241,8 @@ Tidak semua nama file bisa digunakan, ada tata caranya. Jangan menggunakan nama 
 Selain file \texttt{.tex} ada beberapa file pendukung lain, file-file ini ada yang bersifat semetara. Berikut ekstensi umum file-file di LaTeX:
 \begin{center}
 \begin{tabular}{|l|p{0.8\textwidth}|}
+%\hline
+%\textbf{Ekstensi-ekstensi File LaTeX}
 \hline
 \textbf{Ekstensi} & \textbf{Penjelasan}\\
 \hline
@@ -256,8 +258,106 @@ Selain file \texttt{.tex} ada beberapa file pendukung lain, file-file ini ada ya
 \hline
 .cls & File class yang mendefinisikan seperti apa dokumen anda. Dipilih dengan menggunakan perintah \texttt{\textbackslash{}documentclass}.\\
 \hline
-.dtx & TeX terdokumentasi
+.dtx & TeX terdokumentasi. Merupakan format distribusi utama dari file style LaTeX.\\
+\hline
+.ins & File installer untuk file \texttt{.dtx}.\\
+\hline
+.fd & File yang mendeskripsikan font baru agar dikenali oleh LaTeX.\\
+\hline
+.dvi & File Device Independent. Ini adalah output utama yang dihasilkan dari kompilasi kode sumber LaTeX menggunakan kompiler \emph{latex}. Bisa dilihat menggunakan aplikasi DVI previewer atau aplikasi-aplikasi yang medukungnya.\\
+\hline
+.pdf & Portable Document Format. Merupakan hasil utama dari kompilasi kode sumber LaTeX menggunakan kompiler \emph{pdflatex}. Banyak sekali aplikasi untuk menampilkan dokumen dengan ekstensi PDF, salah satunya Adobe Reader, dan Okular.\\
+\hline
+.log & Memberikan detil laporan selama kompiler berjalan.\\
+\hline
+.toc & Menyimpan semua header section. Digunakan untuk membuat daftar isi.\\
+\hline
+.lof & Mirip dengan.toc hanya saja untuk membuat daftar gambar (\emph{list of figures}).\\
+\hline
+.lot & Sama juga tapi untuk membuat daftar tabel (\emph{list of tables}).\\
+\hline
+.idx & Jika di dalam dokumen terdapat indeks. LaTeX menyimpan kata-kata indeks tersebut di dalam file ini. Diproses dengan menggunakan perintah makeindex.\\
+\hline
+.ind & File .idx yang telah diproses dan siap untuk dimasukkan ke dalam dokumen pada perputaran kompilasi selanjutnya.\\
+\hline
+.ilg & File log yang memberitahukan apa yang telah dilakukan oleh makeindex.\\
+\hline
+.sty & File makro package LaTeX. File ini bisa di-load ke dalam dokumen LaTeX menggunakan perintah \texttt{\textbackslash{}usepackage}.\\
+\hline
+.tex & File Input LaTeX atau TeX.\\
+\hline
+.out & File paket hyperref, hanya satu digunakan untuk file master.\\
+\hline
 \end{tabular}
 \end{center}
+
+\part{Elemen-elemen Umum}
+\chapter{Struktur Dokumen}
+Tujuan dari menulis adalah untuk menyampaikan apa yang kita pikirkan, informasi atau pengetahuan kepada pembaca. Pembaca akan mudah memahami jika ide/tulisan kita tertata dengan baik, dalam hal ini hasil tulisan kita terstruktur secara rapi. 
+
+LaTeX berbeda dengan sistem penulisan yang lainnya. LaTeX menyediakan kemudahan untuk pengguna  menata dokumen mereka dengan berbagai hirarki, termasuk bab, subbab, dan paragraf.
+
+\section{Struktur Global}
+Ketika LaTeX memproses kode sumber, dia meminta kode tersebut mengikuti aturan tertentu. Oleh karena itu lah kode sumber ini harus berisi perintah
+\begin{lstlisting}
+\documentclass{...}
+
+\begin{document}
+...
+\end{document}
+\end{lstlisting}
+
+Wilayah antara \texttt{\textbackslash{}documentclass\{...\}} dan \texttt{\textbackslash{}begin\{document\}} dinamakan \emph{preamble}. Biasanya berisi perintah yang mempengaruhi keseluruhan dokumen.
+
+Setelah preamble adalah teks dokumen, berada diantara perintah yang menandakan dimulai dan berakhirnya suatu teks dokumen.
+\begin{lstlisting}
+\begin{document}
+...			% Disini teks yang akan ditampilkan pada output.
+\end{document}
+\end{lstlisting}
+
+\section{Preamble}
+\subsection{Document class}
+Ketika memproses file sumber, LaTeX perlu tahu tipe dokumen yang ingin dibuat penulis. Caranya dengan menggunakan perintah \texttt{\textbackslash{}documentclass}. Seharusnya diletakkan diawal kode input.
+\begin{lstlisting}
+\documentclass[option]{class}
+\end{lstlisting}
+
+\texttt{class} menentukan tipe dokumen yang akan dibuat. Misal LaTeX juga mendukung class dokumen surat(letter) dan presentasi(slide). Untuk saat ini kita hanya menggunakan class article sebagai standar. Sedangkan parameter \texttt{option} digunakan untuk merubah perilaku dari class dokumen. Misal saja:
+\begin{lstlisting}
+\documentclass[11pt,twoside,a4paper]{article}
+\end{lstlisting}
+perintah ini memberitahukan LaTeX untuk menulis dokumen dengan format artikel dengan ukuran font standar 11 point denga layout dua sisi dan menggunakan kertas A4. 
+
+Berikut daftar class dokumen yang didukung LaTeX:
+\begin{center}
+\begin{tabular}{|l|p{0.8\textwidth}|}
+\hline
+\textbf{Class} & \textbf{Keterangan}\\
+\hline
+\texttt{article} & Untuk artikel pada jurnal penelitian sains, presentasi, laporan pendek, dokumentasi program, ajakan, ...\\
+\hline
+\texttt{IEEEtran} & Artikel dengan format IEEE Transactions.\\
+\hline
+\texttt{proc} & Class untuk proceeding turunan dari class article.\\
+\hline
+\texttt{minimal} & Untuk dokumen minimalis, hanya terdiri dari ukuran halaman dan font dasar. Terutama digunakan untuk tujuan debugging.\\
+\hline
+\texttt{report} & Untuk bentuk laporan panjang, berisi beberapa bab seperti buku kecil, tesis,...\\
+\hline
+\texttt{book} & Untuk membuat dengan format buku secara utuh.\\
+\hline
+\texttt{slides} & Untuk bentuk slide. Class ini menggunakan font sans serif ukuran besar.\\
+\hline
+\texttt{memoir} & Untuk mengubah kepantasan output dari dokumen. Turunan dari class buku, tapi kita bisa membuat berbagai macam  dokumen dengannya. \url{http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/memman.pdf}\\
+\hline
+\texttt{letter} & Untuk menulis surat.\\
+\hline
+\texttt{beamer} & Untuk menulis presentasi\\
+\hline
+\end{tabular}
+\end{center}
+
+%Selanjutnya adalah most common option LaTeX.pdf halaman 53
 
 \end{document}
