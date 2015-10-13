@@ -1,11 +1,92 @@
-\documentclass[12pt]{book}
+\documentclass[12pt,oneside]{book}
 
+%--------------------------------------------------------
+% TABLE PACKAGE
+%--------------------------------------------------------
+\usepackage{multirow}
+\usepackage{tabulary}
+
+%--------------------------------------------------------
+% Formatting Setup
+%--------------------------------------------------------
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= ocre,bookmarks=true,bookmarksopen=false,pdftitle={Title},pdfauthor={Isro Hidayat}}
+\usepackage[top=3cm, bottom=3cm, left=4cm, right=3cm]{geometry}
+
+%-------------------------------------------------------
+% SOURCE CODE Package
+%-------------------------------------------------------
+\usepackage{listings}
+\usepackage{color}
+
+%---------------------------------------------------------
+% LIST Customizing Package
+%---------------------------------------------------------
+\usepackage{enumitem}
+\setlist{nolistsep}
+%-------------------------END LIST------------------------
+
+%---------------------------------------------------------
+% PICTURE IMPORT & CUSTOMIZE PACKAGE
+%---------------------------------------------------------
+\usepackage{graphicx}
+\graphicspath{{Gambar/}} %Untuk menentukan direktori gambar
+\usepackage{float}
+
+%---------------------------------------------------------
+% SOURCE CODE Setup & Customize LISTINGS Package
+%---------------------------------------------------------
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+%  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=shadowbox,	               % adds a frame around the code
+  rulesepcolor=\color{mygreen},
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+%  keywordstyle=\color{blue},       % keyword style
+  language=TeX,                 % the language of the code
+  otherkeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+%  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+%--------------------- End Source Code ------------------------------------------------------
+
+
+%----------------------------------------------------------------------------
+% Pengaturan Judul, Author, dan Cover Book
+%----------------------------------------------------------------------------
 \title{Belajar \LaTeXe\ Dari Awal}
 \author{Isro\rq\ Hidayatulloh}
 \date{06 Juli 2015}
 
+
+%----------------------------------------------------------------------------
+%								DOKUMEN INTI
+%----------------------------------------------------------------------------
 \begin{document}
 \renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\partname}{Bagian}
 \renewcommand{\chaptername}{BAB}
 \renewcommand{\figurename}{Gambar}
 \renewcommand{\tablename}{Tabel}
@@ -14,11 +95,169 @@
 \renewcommand{\listfigurename}{Daftar Gambar}
 \setcounter{secnumdepth}{3}
 \maketitle
-\newpage
+%\newpage
+\tableofcontents
 
-\chapter{Tahap Pengenalan}
+\part{Tahap Pengenalan}%\index{Tahap Pengenalan}
 
-\section{Apa itu \LaTeX?}
-\LaTeX\ adalah bahasa pemrograman yang dibuat oleh Donald Knuth
+\chapter{Apa itu \LaTeX?}
+\TeX\ adalah bahasa pemrograman yang dibuat oleh Donald Knuth\footnote{\url{http://en.wikipedia.org/wiki/Donald\%20Kuth}}\ fungsinya untuk membuat dokumen yang yang baik dengan mudah. Lalu apa hubungannya dengan \LaTeX , \LaTeX\ adalah pengembangan dari \TeX\ dengan penambahan package atau style. Sehingga memberikan kemudahan untuk pembuatan dokumen yang kompleks, seperti untuk mengubah font, penambahan gambar, dan masih banyak lagi.
+
+\section{Instalasi}
+Instalasi \LaTeX\ menggunakan sistem distribusi, distribusi \LaTeX\ ini terdiri dari sekumpulan paket dan program. Berikut adalah distribusi \LaTeX\ untuk kebanyakan sistem operasi:
+\begin{itemize}
+	\item TeX Live\footnote{\url{http://www.tug.org/texlive/}}\ adalah kebanyakan distribusi \TeX\ untuk BSD, GNU/Linux, Mac OS X, dan Windows.
+	\item MiKTeX\footnote{\url{http://www.miktex.org/}}\ adalah distribusi khusus Windows.
+	\item MacTeX\footnote{\url{http://www.tug.org/mactex/}}\ distribusi khusus Mac OS turunan dari TeX Live.
+\end{itemize}
+Paket distribusi ini tidak mengikutsertakan editor. Kita bisa menggunakan text editor biasa untuk membuat kode sumber \LaTeX .
+\subsection{Instalasi di Linux}
+Linux terdiri dari banyak distro/distribusi, ada Ubuntu, Debian, Fedora, dsb. Kebanyakan distro telah mengikutsertakan distribusi TeX Live pada repositorinya. Pada Ubuntu kita bisa menggunakan aplikasi Synaptic Package Manager.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{Install_TexLive}
+\caption{Install Texlive-full Menggunakan Synaptic}
+\label{fig:install_texlive}
+\end{figure}
+
+
+\chapter{Dasar}
+Pada bab ini kita akan mulai belajar dasar-dasar LaTeX, jadi anda harus sudah menginstall aplikasi LaTeX pada komputer. Kami menyarankan menggunakan Texmaker sebagai editor LaTeX. Karena kelengkapan dan juga kemudahan pengguanaannya. Sedangkan pada sistem operasi Windows teman-teman bisa menggunakan Texwork.
+\section{Sintak \LaTeX}
+\LaTeX\ mengkonversi teks sumber dikombinasikan dengan markup kedalam dokumen dengan kualitas tinggi. File input untuk \LaTeX\ adalah plain text\footnote{http://en.wikipedia.org/wiki/plain\%20text}. Bentuk umum paling sederhana adalah sebagai berikut:
+
+\begin{lstlisting}
+\documentclass{article}
+
+\begin{document}
+Hello world!
+\end{document}
+\end{lstlisting}
+
+\subsection{Spasi}
+Kompiler LaTeX menormalisasi spasi, baik itu berupa spasi atau tab. Meski kita membuat spasi sebanyak apapun LaTeX akan menganggapnya sebagai spasi tunggal. Begitu juga dengan ganti baris tunggal juga dianggap sebagai spasi, jika ganti baris ini dilakukan dua kali atau membuat baris kosong antar dua baris. Hal ini baru menjadikan Paragraf baru pada output.
+
+Berikut contoh yang akan membantu anda memahamai bagaimana kerja spasi di LaTeX:
+
+\lstinputlisting[language=TeX, caption=spasi.tex]{Contoh/spasi.tex}
+
+Sehingga output yang didapat dari kode sumber diatas adalah:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{spasi}
+\caption{Spasi Pada LaTeX}
+\label{fig:spasi}
+\end{figure}
+
+Untuk selanjutnya silahkan anda beruji coba sendiri yah.. :-). Selanjutnya adalah
+
+\subsection{Karakter Khusus}
+Karakter-karakter ini adalah karakter/huruf yang memiliki suatu arti bagi kompiler LaTeX. Jika kita tuliskan karakter-karakter ini secara langsung pada kode, maka akan menghasilkan hal yang tidak sesuai keinginan. Karakter-karakter ini adalah :
+\begin{figure}[h]
+\includegraphics[scale=0.5]{karakterkhusus}
+\end{figure}
+
+\lstinputlisting[language=TeX, caption=karakterkhusus.tex, firstline=4, lastline=4]{Contoh/karakterkhusus}
+
+Karakter backslash(\textbackslash{}) tidak bisa ditambahkan dengan cara menambahkan backslash lagi setelahnya (\textbackslash{}\textbackslash{}). Cara ini digunakan untuk mengakhiri baris. Sedangkan pada karakter \textbackslash{}\^{} dan \textbackslash{}\~{} harus ditambahkan kurung kurawal, karena kalau tidak perintah ini \textbackslash{}\~{}n akan menghasilkan \~n.
+
+\subsection{Group}
+Sebuah \emph{group} pada dasarnya didefinisikan dengan sepasang kurung kurawal \{\}. Dan perintah-perintah yang ada didalamnya hanya berkerja pada group tersebut. Perintah \textbackslash{}begingroup dan \textbackslash{}endgroup merupakan perintah alternatif dari kurung kurawal. Contoh:
+\begin{lstlisting}
+{
+\bf Yang ini BOLD
+}
+di sini tidak lagi
+\end{lstlisting}
+\begin{figure}[h]
+\includegraphics[scale=0.5]{group}
+\end{figure}
+group berguna ketika kita menginginkan suatu perintah hanya berpengaruh pada beberapa baris atau kata saja.
+
+\subsection{Environment}
+\emph{Enviroment} di LaTeX punya aturan yang mirip dengan perintah/command, biasanya environment punya pengaruh lebih luas.  Sintaks umumnya: 
+\begin{lstlisting}
+\begin{namaenvironment}
+di sini teks yang terpengaruh oleh environment
+\end{namaenvironment}
+\end{lstlisting}
+Diantara \texttt{\textbackslash{}begin} dan \texttt{\textbackslash{}end}\ kita dapat menambahkan perintah lain dan juga bisa nested environment(environment bertumpuk).
+
+\subsection{Commands}
+(\emph{Commands}) bersifat case sensitive dan mengikuti dua aturan berikut:
+\begin{itemize}
+\item diawali dengan backslash \textbackslash{} dan selanjutnya nama command yang hanya berisi hanya huruf. Command diterminasi dengan sebuah spasi, sebuah angka atau apapun selain huruf.
+\item Berisi sebuah backslash \textbackslash{} dan tentunya sebuah non-huruf.
+\end{itemize}
+Beberapa commands butuh argumen yang diletakkan di dalam kurung kurawal \{\} setelah nama command. Juga terkadang butuh opsi tambahan yang diletakkan di dalam kurung siku [ ]. Sintaks sebagai berikut:
+\begin{lstlisting}
+\namacommand[opsi1,opsi2,...]{argumen1}argumen2}...
+\end{lstlisting}
+Kebanyakan perintah standar LaTeX punya \emph{switch}. Switch ini adalah sebuah kesamaan dari command/perintah hanya saja tidak punya argumen dan berada di dalam kurung kurawal. Jangan memanggilnya diluar kurung karena akan berpengaruh ke seluruh dokumen.\\
+Contoh:\\
+\begin{lstlisting}
+% \emph adalah command/baris perintah, \em adalah switch
+\emph{text tercetak miring}, bagian ini normal % Format Benar
+{\em text tercetak miring}, bagian ini normal % Format benar
+
+\em text tercetak miring, bagian normal % Format salah
+\emph{text tercetak miring}, bagian normal % Format salah
+\end{lstlisting}
+
+\subsection{Komentar}
+Jika pada input file terdapat karakter \% maka baris setelahnya tidak ikut dieksekusi, dan tidak berpengaruh pada hasil output. Biasanya digunakan untuk membuat catatan tentang perintah atau keterangan dari dokumen yang dibuat.
+\lstinputlisting[language=TeX, caption=komentar.tex, firstline=4, lastline=8]{Contoh/komentar}
+\begin{figure}[h]
+\includegraphics[scale=0.6]{komentar}
+\end{figure}
+
+Sebagai catatan bahwa karakter \% bisa digunakan untuk memisahkan kata yang panjang tanpa ada spasi atau ganti baris.
+
+\section{Membuat Dokumen Pertama}
+Sekarang saatnya membuat dokumen sederhana untuk langkah awal. Kita bisa membuat kode sumber LaTeX ini menggunakan text editor seperti Notepad++, vim, dan gedit. Namun kami sarankan untuk menggunakan editor LaTeX khusus seperti Texwork untuk Windows sedangkan untuk Linux menggunakan Texmaker.
+\lstinputlisting[language=TeX, caption=assalam.tex]{Contoh/assalam}
+
+\subsection{Apa Arti dari Kode Sumber?}
+Mari kita pelajari tiap baris dari kode sumber di atas:
+\begin{itemize}
+\item \textbf{\texttt{\% assalam.text - Contoh pertama LaTeX}}\\
+Baris pertama adalah baris komentar, baris ini tidak akan nampak dan tidak menjalankan perintah apapun. Bisa digunakan untuk memberi keterangan mengenai isi kode sumber, dan informasi tentang pengarang, dsb.
+\item \textbf{ \texttt{\textbackslash{}documentclass\{article\}}}\\
+Ini adalah baris perintah atau command yang memberitahukan LaTeX untuk menggunakan format dokumen \texttt{article}.
+\item \textbf{\texttt{\textbackslash{}begin\{document\}}}\\
+Ini adalah gerbang untuk lingkungan dokumen, Isi dokumen diletakkan setelah perintah ini. Sedangkan perintah-perintah yang berada di atasnya dinamakan \emph{preamble}.
+\item \textbf{\texttt{Assalamualaikum Warahmatulloh... \% Salam Rek..! Biar beda :-)}}\\
+Nah ini adalah baris yang akan nampak pada hasil akhir.
+\item \texttt{\textbf{\textbackslash{}end\{document\}}}\\
+Ini adalah baris penutup dari perintah \textbackslash{}begin\{document\}. Apa pun setelah perintah ini tidak akan dipedulikan.
+\end{itemize}
+
+\section{File}
+\subsection{Membuat Nama File yang Baik}
+Tidak semua nama file bisa digunakan, ada tata caranya. Jangan menggunakan nama file atau folder mmenggunakan spasi, kita bisa membuat nama yang panjang tapi hindari spasi. Gunakan huruf (a-z) angka (1-9) dan tanda minus (-) dan sebuah titik untuk pemisah ekstensi file. Jangan mencampur antara huruf besar dan kecil dalam satu nama, karena beberapa sistem operasi tidak memperdulikan namun yang lainnya membedakannya.
+
+\subsection{File Tambahan}
+Selain file \texttt{.tex} ada beberapa file pendukung lain, file-file ini ada yang bersifat semetara. Berikut ekstensi umum file-file di LaTeX:
+\begin{center}
+\begin{tabular}{|l|p{0.8\textwidth}|}
+\hline
+\textbf{Ekstensi} & \textbf{Penjelasan}\\
+\hline
+.aux & File ini digunakan untuk menyimpan informasi yang berhubungan dengan cross-referense\\
+\hline
+.bbl & File bibliography, merupakan output dari BiBTeX dan digunakan oleh LaTeX\\
+\hline
+.bib & File database bibliography\\
+\hline
+.blg & File log dari BiBTeX\\
+\hline
+.bst & File Tipe/model BiBTeX \\
+\hline
+.cls & File class yang mendefinisikan seperti apa dokumen anda. Dipilih dengan menggunakan perintah \texttt{\textbackslash{}documentclass}.\\
+\hline
+.dtx & TeX terdokumentasi
+\end{tabular}
+\end{center}
 
 \end{document}
