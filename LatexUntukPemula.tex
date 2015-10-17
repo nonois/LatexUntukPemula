@@ -445,6 +445,50 @@ Ini adalah contoh yang lebih kompleks:
 \date{\today}
 \maketitle
 \end{lstlisting}
+Tanda garis miring dua kali (\textbackslash{}\textbackslash{}) akan memaska LaTeX untuk ganti baris. Jika pengarang dokumen ada dua cara memisahkannya adalah dengan menggunakan perintah \texttt{\textbackslash{}and}:
+\begin{lstlisting}
+\title{Gawe Dewe}
+\author{Cak Mat \and Cak Rupi'i}
+\date{\today}
+\maketitle
+\end{lstlisting}
 
+\subsection{Abstrak}
+Pada kebanyakan lembar penelitian punya yang namanya abstrak. LaTeX telah menyediakan perintah untuk membuat abstrak, dan harus diletakkan pada susunan yang benar. Perintah ini diletakkan setelah top matter tapi sebelum bab utama. Perintah tersedia untuk class \emph{article} dan \emph{report} sedangkan buku tidak.
+\begin{lstlisting}
+\documentclass{article}
+
+\begin{document}
+
+\begin{abstract}
+Di sini abtrak diletakkan...
+...
+\end{abstract}
+...
+\end{document}
+\end{lstlisting}
+
+LaTeX akan menggunakan kata \lq\lq Abstract\rq\rq sebagai judul secara default. Jika ingin merubahnya misal dengan nama \lq\lq Pengantar\rq\rq maka berikan perintah berikut sebelum memulai abstract.
+\begin{lstlisting}
+\renewcommand{\abstractname}{Pengantar}
+\end{lstlisting}
+
+\subsection{Perintah Pembagian Bab}
+Perintah \emph{sectioning} ini cukup beragam. Tergantung dari class dokumen masing-masing. Misal, class \texttt{book} punya perintah \texttt{\textbackslash{}chapter} sedangkan class \texttt{article} tidak. Berikut bentuk perintah sectioning ini:
+
+\begin{lstlisting}
+\chapter{Pengenalan}
+Ini isi dari section chapter... 
+Dalam bahasa indonesia ini lah yang dinamakan BAB
+
+\section{SubBab}
+Ini isi dari sub bab...
+
+\subsection{SubsubBab}
+Ini isi dari subsubbab...
+
+\end{lstlisting}
+
+Perlu diingat bahwa perintah sectioning ini tidak mengenal perintah pembuka(begin) atau penutup(end). Misal ketika kita mendeklarasikan perintah \texttt{\textbackslash{}chapter} maka secara otomatis menjadi Bab I sedangkan perintah \texttt{\textbackslash{}chapter} yang ke dua menjadi Bab II.
 
 \end{document}

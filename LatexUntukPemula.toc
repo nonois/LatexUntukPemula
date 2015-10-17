@@ -23,3 +23,5 @@
 \contentsline {subsection}{\numberline {3.2.2}Package}{14}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}Lingkungan \emph {Document}}{16}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Top matter}{16}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Abstrak}{17}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Perintah Pembagian Bab}{17}{subsection.3.3.3}
