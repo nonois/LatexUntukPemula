@@ -542,11 +542,12 @@ Sedangkan untuk mendapatkan bab yang tak bernomor dan tidak ditampilkan pada daf
 \end{lstlisting}
 Semua versi perintah bab mulai dari \texttt{\textbackslash{}part*} sampai \texttt{\textbackslash{}subparagraph*} memiliki bentuk perintah ini.
 
-Namun jika bab tak bernomor ini tetap ingin tercetak pada daftar isi, maka gunakan peintah \texttt{\textbackslash{}addcontentsline}:
+Namun jika bab tak bernomor ini tetap ingin tercetak pada daftar isi, maka gunakan perintah \texttt{\textbackslash{}addcontentsline}:
 \begin{lstlisting}
 \section*{The Mask Man}
 \addcontentsline{toc}{section}{The Mask Man}
 \end{lstlisting}
+\texttt{toc} bisa diganti dengan parameter lain misal \texttt{lot} untuk daftar tabel dan \texttt{lof} untuk daftar gambar.
 
 Sebagai Catatan agar bookmark bisa bekerja dengan baik pada PDF agar bookmark dapat terhubung ke tempat yang tepat pada dokumen. Perintah \texttt{\textbackslash{}phantomsection} yang ada pada package \texttt{hyperref}, berikut implementasinya:
 \begin{lstlisting}
@@ -569,6 +570,16 @@ Penomoran bab dapat diatur dimulai darimana dapat dilakukan dengan perintah:
 Bab selanjutnya setelah perintah ini akan diberi nomor 5.
 
 \subsection{Paragraph Biasa}
+Teks paragraf terletak setelah judul bab, hanya ketikkan beberapa kata atau kalimat. Untuk berganti paragraf hanya berikan baris kosong antar paragraf. Ini tidak akan berpengaruh pada berapa banyak jarak antar paragraf karena jarak diatur oleh format tersendiri.
+
+\subsection{Daftar Isi}
+Semua penomoran otomatis pada heading akan dimasukkan pada daftar isi secara otomatis. Untuk menambahkan daftar isi tinggal menambahkan perintah \texttt{\textbackslash{}tableofcontents}, bisanya setelah Abstrak atau Kesimpulan.
+
+Perintah \texttt{\textbackslash{}listoffigures} dan \texttt{\textbackslash{}listoftables} punya fungsi yang sama pula dengan perintah \texttt{\textbackslash{}tableofcontents}, bedanya untuk menampilkan daftar gambar dan daftar tabel.
+
+Untuk merubah judul daftar isi, karena pada dasarnya judul ini berbahasa inggris jadi agar berbahasa Indonesia kita harus merubah setting default judul daftar isi. cara merubahnya adalah dengan membubuhkan perintah \texttt{\textbackslash{}renewcommand\{\textbackslash{}contentsname\}\{Nama Judul Daftar Isi\}} pada bagian preamble. Sedangkan untuk daftar gambar, ubah \texttt{\textbackslash{}contentsname} dengan \texttt{\textbackslash{}listfigurename} dan daftar tabel dengan \texttt{\textbackslash{}listtablename}.
+
+\subsubsection{Kedalaman Bab}
 
 
 \end{document}

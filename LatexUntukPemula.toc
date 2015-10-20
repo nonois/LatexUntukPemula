@@ -27,3 +27,5 @@
 \contentsline {subsection}{\numberline {3.3.3}Pengaturan Bab}{17}{subsection.3.3.3}
 \contentsline {subsubsection}{Penomoran Bab}{18}{section*.2}
 \contentsline {subsection}{\numberline {3.3.4}Paragraph Biasa}{20}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Daftar Isi}{20}{subsection.3.3.5}
+\contentsline {subsubsection}{Kedalaman Bab}{20}{section*.3}

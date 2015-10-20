@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.10.4)  20 OCT 2015 19:18
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.10.4)  20 OCT 2015 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,13 +987,25 @@ k mengenal perintah pembuka(begin)
  []
 
 [18] [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 574.
- [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 574.
+Overfull \hbox (30.65924pt too wide) in paragraph at lines 576--577
+\EU1/TimesNewRoman(0)/m/n/12 otomatis. Untuk menambahkan daftar isi tinggal men
+ambahkan perintah \EU1/lmtt/m/n/12 \tableofcontents\EU1/TimesNewRoman(0)/m/n/12
+ ,
+ []
+
+
+Overfull \hbox (34.72444pt too wide) in paragraph at lines 580--581
+\EU1/TimesNewRoman(0)/m/n/12 merubahnya adalah dengan membubuhkan perintah \EU1
+/lmtt/m/n/12 \renewcommand{\contentsname}{Nama
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 585.
+[20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 585.
  (./LatexUntukPemula.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 574.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 574.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 574.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 585.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 585.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 585.
  ) 
 Here is how much of TeX's memory you used:
  23217 strings out of 493918
