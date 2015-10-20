@@ -13,6 +13,8 @@
 \usepackage{hyperref}
 \hypersetup{hidelinks,backref=true,pagebackref=true,hyperindex=true,colorlinks=false,breaklinks=true,urlcolor= ocre,bookmarks=true,bookmarksopen=false,pdftitle={Title},pdfauthor={Isro Hidayat}}
 \usepackage[top=3cm, bottom=3cm, left=4cm, right=3cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 
 %-------------------------------------------------------
 % SOURCE CODE Package
@@ -94,7 +96,7 @@
 \renewcommand{\bibname}{Daftar Pustaka}
 \renewcommand{\listtablename}{Daftar Tabel}
 \renewcommand{\listfigurename}{Daftar Gambar}
-\setcounter{secnumdepth}{3}
+\setcounter{secnumdepth}{2}
 \maketitle
 %\newpage
 \tableofcontents
@@ -360,7 +362,10 @@ Berikut daftar class dokumen yang didukung LaTeX:
 \end{center}
 
 Pada umumnya class document punya banyak opsi/option. Beberapa ada yang punya opsi berbeda atau bahkan tidak sama sekali. Untuk class dari pihak ketiga biasanya telah disertai dokumentasi. Pada tabel di bawah ini adalah opsi-opsi yang paling banyak digunakan dalam class:
-\begin{center}
+
+\begin{table}[h!]
+\caption{Opsi-opsi Umum Pada Class}
+\centering
 \begin{tabular}{|l|p{0.6\textwidth}|}
 \hline
 \textbf{Opsi} & \textbf{Penjelasan}\\
@@ -384,7 +389,10 @@ Pada umumnya class document punya banyak opsi/option. Beberapa ada yang punya op
 \texttt{landscape} & Merubah layout dokumen untuk diprint dalam mode landscape.\\ \hline
 \texttt{draft} & Membuat LaTeX mengindikasikan masalah perataan dan jarak antar akhir kata pada kotak kecil di sebelah kanan margin. Dan juga memberi penekanan dalam penyertaan gambar.\\ \hline
 \end{tabular}
-\end{center}
+\label{tab:opsiclass}
+%\end{center}
+\end{table}
+
 
 \subsection{Package}
 Tidak semua bisa diselesaikan oleh LaTeX murni. Jika kita ingin menambahkan gambar, teks berwarna, atau sumber kode dari suatu file ke dalam dokumen, kita harus meningkatkan kemampuan LaTeX. Cara meningkatkannya ini lah dengan menggunakan \emph{package}. Package diaktifkan dengan menggunakan perintah
@@ -468,12 +476,12 @@ Di sini abtrak diletakkan...
 \end{document}
 \end{lstlisting}
 
-LaTeX akan menggunakan kata \lq\lq Abstract\rq\rq sebagai judul secara default. Jika ingin merubahnya misal dengan nama \lq\lq Pengantar\rq\rq maka berikan perintah berikut sebelum memulai abstract.
+LaTeX akan menggunakan kata \lq\lq Abstract\rq\rq\ sebagai judul secara default. Jika ingin merubahnya misal dengan nama \lq\lq Pengantar\rq\rq\ maka berikan perintah berikut sebelum memulai abstract.
 \begin{lstlisting}
 \renewcommand{\abstractname}{Pengantar}
 \end{lstlisting}
 
-\subsection{Perintah Pembagian Bab}
+\subsection{Pengaturan Bab}
 Perintah \emph{sectioning} ini cukup beragam. Tergantung dari class dokumen masing-masing. Misal, class \texttt{book} punya perintah \texttt{\textbackslash{}chapter} sedangkan class \texttt{article} tidak. Berikut bentuk perintah sectioning ini:
 
 \begin{lstlisting}
@@ -490,5 +498,77 @@ Ini isi dari subsubbab...
 \end{lstlisting}
 
 Perlu diingat bahwa perintah sectioning ini tidak mengenal perintah pembuka(begin) atau penutup(end). Misal ketika kita mendeklarasikan perintah \texttt{\textbackslash{}chapter} maka secara otomatis menjadi Bab I sedangkan perintah \texttt{\textbackslash{}chapter} yang ke dua menjadi Bab II.
+
+LaTeX menyediakan 7 level bab, seperti terlihat dalam tabel dibawah ini. Tiap bab pada tabek ini adalah subbab dari bab di atasnya.
+\begin{table}[h!]
+\caption{Susunan 7 Level Bab}
+\centering
+\begin{tabular}{l c l}
+\hline\hline
+\multicolumn{1}{c}{\bfseries Perintah} & \multicolumn{1}{c}{\bfseries Level} & \multicolumn{1}{c}{\bfseries Komentar}\\
+\hline
+\texttt{\textbackslash{}part\{\lq \lq part\rq \rq \}} & -1 & Tidak untuk class letter\\[1ex]
+\texttt{\textbackslash{}chapter\{\lq \lq chapter\rq \rq \}} & 0 & Hanya book dan reports\\[1ex]
+\texttt{\textbackslash{}section\{\lq \lq section\rq \rq \}} & 1 & Tidak untuk class letter\\[1ex]
+\texttt{\textbackslash{}subsection\{\lq \lq subsection\rq \rq \}} & 2 & Tidak untuk class letter\\[1ex]
+\texttt{\textbackslash{}subsubsection\{\lq \lq subsubsection\rq \rq \}} & 3 & Tidak untuk class letter\\[1ex]
+\texttt{\textbackslash{}paragraph\{\lq \lq paragraph\rq \rq \}} & 4 & Tidak untuk class letter\\[1ex]
+\texttt{\textbackslash{}subparagraph\{\lq \lq subparagraph\rq \rq \}} & 5 & Tidak untuk class letter\\[1ex]
+\hline
+\end{tabular}
+\end{table}
+
+Semua bab ini akan ditambahkan ke dalam daftar isi secara otomatis. Namun ini akan menjadi mesalah ketika kita membuat suatu perubahan standar, misal perubahan model pada heading, judul yang sangat panjang, ganti baris khusus atau font-font yang tidak normal. Perubahan ini akan juga terjadi pada daftar isi dan ini akan menyebabkan penataan pada daftar isi akan amburadul. Oleh karena itu LaTeX menyediakan sebuah judul alternatif, judul alternatif ini diletakkan pada kurung siku sebelum judul sebenarnya.
+\begin{lstlisting}
+\section[Judul Alternatif]{Judul Panjang Yang Sangat Panjang Sekali Sehingga Yang Membaca Jadi Capek}
+\end{lstlisting}
+
+\subsubsection{Penomoran Bab}
+Penomoran bab pada LaTeX dilakukan secara otomatis, jadi jangan menambahkannya sendiri yah..!. Pada perintah \texttt{part} penomoran berupa huruf romawi (Part I, Part II, dst). \texttt{chapter} dan \texttt{section} berupa penomoran angka.
+
+Kita bisa merubah seberapa penomoran bab yang ditampilkan, misal kita hanya ingin sampai 3 level penomoran (1.2.3.4.) maka perintah yang digunakan:
+\begin{lstlisting}
+\setcounter{secnumdepth}{3}
+\end{lstlisting}
+Mengapa sampai empat angka yang tercetak padahal cuma 3 level. Coba lihat tabel pe-level-an bab di atas, level ke 3 adalah subsubsection, jadi hanya sampai subsubsection ini sajalah penomoran yang terbentuk. Secara default penomoran ini hanya sampai level 2.
+
+Ada juga yang namanya \texttt{tocdepth}, digunakan untuk menentukan sampai level berapa penomoran bab yang tercetak pada daftar isi. Cara mengubahnya pun sama yaitu:
+\begin{lstlisting}
+\setcounter{tocdepth}{3}
+\end{lstlisting}
+Sedangkan untuk mendapatkan bab yang tak bernomor dan tidak ditampilkan pada daftar isi. Tinggal ketikkan perintah diikuti tanda bintang * sebelum tanda kurung.
+\begin{lstlisting}
+\subsection*{Tidak Ikut Serta}
+\end{lstlisting}
+Semua versi perintah bab mulai dari \texttt{\textbackslash{}part*} sampai \texttt{\textbackslash{}subparagraph*} memiliki bentuk perintah ini.
+
+Namun jika bab tak bernomor ini tetap ingin tercetak pada daftar isi, maka gunakan peintah \texttt{\textbackslash{}addcontentsline}:
+\begin{lstlisting}
+\section*{The Mask Man}
+\addcontentsline{toc}{section}{The Mask Man}
+\end{lstlisting}
+
+Sebagai Catatan agar bookmark bisa bekerja dengan baik pada PDF agar bookmark dapat terhubung ke tempat yang tepat pada dokumen. Perintah \texttt{\textbackslash{}phantomsection} yang ada pada package \texttt{hyperref}, berikut implementasinya:
+\begin{lstlisting}
+\phantomsection
+\addcontentsline{toc}{section}{Pengenalan}
+\section*{Pengenalan}
+\end{lstlisting}
+
+Untuk perintah \texttt{chapter} kita harus memberikan perintah \texttt{\textbackslash{}cleardoublepage} untuk memperbaiki penomoran halaman pada daftar isi:
+\begin{lstlisting}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Dasar LaTeX}
+\end{lstlisting}
+
+Penomoran bab dapat diatur dimulai darimana dapat dilakukan dengan perintah:
+\begin{lstlisting}
+\setcounter{section}{4}
+\end{lstlisting}
+Bab selanjutnya setelah perintah ini akan diberi nomor 5.
+
+\subsection{Paragraph Biasa}
+
 
 \end{document}
