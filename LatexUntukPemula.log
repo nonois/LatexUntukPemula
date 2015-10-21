@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.10.4)  20 OCT 2015 21:44
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.10.4)  21 OCT 2015 21:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -864,7 +864,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [1
 
-] [2
+]
+LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/m/sl' in size <12> not ava
+ilable
+(Font)              Font shape `EU1/TimesNewRoman(0)/m/it' tried instead on inp
+ut line 104.
+ [2] [3
 
 ]
 BAB 1.
@@ -889,50 +894,46 @@ File: Gambar/Install_TexLive.eps Graphic file (type eps)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3
+[4
 
 ]
-LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/m/sl' in size <12> not ava
-ilable
-(Font)              Font shape `EU1/TimesNewRoman(0)/m/it' tried instead on inp
-ut line 127.
 LaTeX Font Info:    Font shape `EU1/TimesNewRoman(0)/m/sl' in size <8> not avai
 lable
 (Font)              Font shape `EU1/TimesNewRoman(0)/m/it' tried instead on inp
 ut line 127.
- [4]
+ [5]
 BAB 2.
 LaTeX Font Info:    Font shape `EU1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `EU1/lmtt/b/n' tried instead on input line 137.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 145.
-(./Contoh/spasi.tex [5
+(./Contoh/spasi.tex [6
 
 ])
 File: Gambar/spasi.eps Graphic file (type eps)
  <Gambar/spasi.eps>
 File: Gambar/karakterkhusus.eps Graphic file (type eps)
  <Gambar/karakterkhusus.eps>
-(./Contoh/karakterkhusus.tex) [6]
+(./Contoh/karakterkhusus.tex) [7]
 File: Gambar/group.eps Graphic file (type eps)
  <Gambar/group.eps>
 Underfull \hbox (badness 10000) in paragraph at lines 200--202
 
  []
 
-[7] (./Contoh/komentar.tex)
+[8] (./Contoh/komentar.tex)
 File: Gambar/komentar.eps Graphic file (type eps)
  <Gambar/komentar.eps> (./Contoh/assalam.tex)
 LaTeX Font Info:    Font shape `EU1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `EU1/lmtt/b/n' tried instead on input line 227.
 
-[8]
+[9]
 Overfull \hbox (4.77142pt too wide) in paragraph at lines 229--231
 \EU1/TimesNewRoman(0)/m/n/12 Ini adalah baris perintah atau command yang member
 itahukan LaTeX untuk meng-
  []
 
-[9] [10] [11
+[10] [11] [12
 
 ]
 BAB 3.
@@ -943,7 +944,7 @@ Overfull \hbox (5.38504pt too wide) in paragraph at lines 313--314
 esNewRoman(0)/m/n/12 dinamakan \EU1/TimesNewRoman(0)/m/it/12 pream-
  []
 
-[12
+[13
 
 ]
 Underfull \hbox (badness 1824) in paragraph at lines 355--356
@@ -972,7 +973,7 @@ Overfull \hbox (7.47223pt too wide) in paragraph at lines 369--394
  [][] 
  []
 
-[13] [14]
+[14] [15]
 Overfull \hbox (2.75534pt too wide) in paragraph at lines 416--417
 \EU1/TimesNewRoman(0)/m/n/12 namun jika kita memiliki opsi pada package hal ini
  tidak berlaku. Perintah \EU1/lmtt/m/n/12 \usepackage
@@ -980,13 +981,13 @@ Overfull \hbox (2.75534pt too wide) in paragraph at lines 416--417
 
 (./Contoh/package.tex)
 File: Gambar/package.eps Graphic file (type eps)
- <Gambar/package.eps> [15] [16] [17]
+ <Gambar/package.eps> [16] [17] [18]
 Overfull \hbox (0.37996pt too wide) in paragraph at lines 500--501
 []\EU1/TimesNewRoman(0)/m/n/12 Perlu diingat bahwa perintah sectioning ini tida
 k mengenal perintah pembuka(begin)
  []
 
-[18] [19]
+[19] [20]
 Overfull \hbox (30.65924pt too wide) in paragraph at lines 576--577
 \EU1/TimesNewRoman(0)/m/n/12 otomatis. Untuk menambahkan daftar isi tinggal men
 ambahkan perintah \EU1/lmtt/m/n/12 \tableofcontents\EU1/TimesNewRoman(0)/m/n/12
@@ -999,21 +1000,26 @@ Overfull \hbox (34.72444pt too wide) in paragraph at lines 580--581
 /lmtt/m/n/12 \renewcommand{\contentsname}{Nama
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 585.
-[20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 585.
+[21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 599.
+ [22]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 599.
  (./LatexUntukPemula.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 585.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 585.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 585.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 599.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 599.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 599.
  ) 
 Here is how much of TeX's memory you used:
- 23217 strings out of 493918
- 420168 string characters out of 6150563
+ 23229 strings out of 493918
+ 420350 string characters out of 6150563
  571640 words of memory out of 5000000
- 26277 multiletter control sequences out of 15000+600000
+ 26289 multiletter control sequences out of 15000+600000
  10655 words of font info for 69 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  46i,10n,67p,10421b,1818s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on LatexUntukPemula.pdf (21 pages).
+Output written on LatexUntukPemula.pdf (23 pages).

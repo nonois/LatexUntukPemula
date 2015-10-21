@@ -580,6 +580,20 @@ Perintah \texttt{\textbackslash{}listoffigures} dan \texttt{\textbackslash{}list
 Untuk merubah judul daftar isi, karena pada dasarnya judul ini berbahasa inggris jadi agar berbahasa Indonesia kita harus merubah setting default judul daftar isi. cara merubahnya adalah dengan membubuhkan perintah \texttt{\textbackslash{}renewcommand\{\textbackslash{}contentsname\}\{Nama Judul Daftar Isi\}} pada bagian preamble. Sedangkan untuk daftar gambar, ubah \texttt{\textbackslash{}contentsname} dengan \texttt{\textbackslash{}listfigurename} dan daftar tabel dengan \texttt{\textbackslash{}listtablename}.
 
 \subsubsection{Kedalaman Bab}
+Kedalaman bab disini maksudnya adalah sampai level berapa kepala/judul bab yang tercetak pada daftar isi. Nah kedalaman bab pada daftar isi bisa diatur sampai seberapa yang tercetak, secara default sampai level 3. Cara merubah settingan default tersebut adalah dengan perintah:
+\begin{lstlisting}
+\setcounter{tocdepth}{4}
+\end{lstlisting}
+Perintah di atas menjadikan daftar isi mencetak header bab hingga pada level 4 yaitu paragraf. Sebagai catatan perubahan ini bersifat tetap, maksudnya berlaku untuk keseluruhan dokumen. Kita juga bisa merubahnya pada tipe bab tertentu saja:
+\begin{lstlisting}
+\makeatletter
+\renewcommand*{\toclevel@chapter}{-1}	% membuat chapter se-level dengan part
+\chapter{Hanya Chapeter Chappi}
+\renewcommand*{\toclevel@chapter}{0}	% Mengembalikan level chapter ke semula
+\makeatother
+\end{lstlisting}
 
+\section{Struktur Buku}
+% 5.4 Structure Book - LaTeX.pdf halaman 60
 
 \end{document}
