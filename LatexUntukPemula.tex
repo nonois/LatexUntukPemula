@@ -1,5 +1,7 @@
 \documentclass[12pt,oneside]{book}
 
+\usepackage{amsmath}
+
 %--------------------------------------------------------
 % TABLE PACKAGE
 %--------------------------------------------------------
@@ -595,5 +597,84 @@ Perintah di atas menjadikan daftar isi mencetak header bab hingga pada level 4 y
 
 \section{Struktur Buku}
 % 5.4 Structure Book - LaTeX.pdf halaman 60
+Standar class \texttt{book} LaTeX sama dengan layout yang dijelaskan sebelumnya, hanya saja dengan beberapa tambahan. Secara default class ini dibentuk dengan layout two-sided(margin kanan dan kiri akan berubah sesuai dengan nomor halaman).
+
+Pada class \texttt{book} ini juga memberikan perintah khusus untuk merubah format pada beberapa tempat di dokumen. Berikut cara menggunakannya secara benar.
+
+\begin{lstlisting}
+\begin{document}
+\frontmatter
+
+\maketitle
+
+% Bab pendahuluan
+\chapter{Pendahuluan}
+% ...
+
+\mainmatter
+\chapter{Bab 1}
+% ...
+
+\appendix
+\chapter{Appendix ke I}
+
+\backmatter
+\chapter{Catatan terakhir}
+
+\end{document}
+\end{lstlisting}
+\begin{itemize}
+\item \texttt{\textbackslash{}frontmatter}, bab pada wilayah ini tidak akan bernomor. Nomor halaman dicetak dalam angka romawi. Frontmatter tidak mungkin punya bab, karena mereka akan bernomor \texttt{0.n} dan karena tidak ada penomoran bagian.
+\item \texttt{\textbackslash{}mainmatter} berfungsi seperti biasanya. Perintah ini akan menyetel ulang penomoran halaman. Penomoran halaman dicetak dalam angka arabic.
+\item Perintah macro \texttt{\textbackslash{}appendix} digunakan untuk mengindikasikan bab atau subbab berikut akan dinomori sebagai lampiran. Appendices/lampiran ini juga digunakan dalam class article:
+\begin{lstlisting}
+\appendix
+\section{Lampiran Utama}
+\end{lstlisting}
+Gunakan \texttt{\textbackslash{}appendix} sekali saja untuk semua lampiran.
+\item \texttt{\textbackslash{}backmatter} berkerja layaknya frontmatter. Sama-sama tidak punya penomoran bab.
+\end{itemize}
+
+Usahakan untuk menghindari mencampur urutan perintah. Namun demikian semua perintah ini bersifat opsional, artinya tidak semua perintah harus diikutkan.
+
+Catatan: halaman khusus seperti daftar isi dianggap sebagai bab tak bernomor.
+
+\subsection{Urutan Halaman}
+Berikut ini urutan halaman untuk buku.
+
+\textbf{Frontmatter}
+
+\begin{enumerate}
+\item Setengah-Judul
+\item Kosong
+\item Halaman Judul
+\item Informasi(catatan hak paten, ISBN, dll)
+\item Dedikasi jika tidak dikosongkan
+\item Daftar Isi
+\item Daftar Gambar (Bisa juga diletakkan pada backmatter)
+\item Bab Pendahuluan
+\end{enumerate}
+
+\textbf{Mainmatter}
+
+\begin{enumerate}
+\item Topik Utama
+\end{enumerate}
+
+\textbf{Appendix}
+
+\begin{enumerate}
+\item Beberapa Bab bagian bawah
+\end{enumerate}
+
+\textbf{Backmatter}
+
+\begin{enumerate}
+\item Bibliografi
+\item Daftar Kata / Indeks
+\end{enumerate}
+
+\subsection{Pengantar Bab Dengan Penomoran Halaman Utama}
+% LaTeX.pdf Hal 62
 
 \end{document}
