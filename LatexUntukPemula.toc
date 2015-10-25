@@ -1,34 +1,39 @@
-\contentsline {part}{I\hspace {1em}Tahap Pengenalan}{3}{part.1}
-\contentsline {chapter}{\numberline {1}Apa itu \LaTeX ?}{4}{chapter.1}
-\contentsline {section}{\numberline {1.1}Instalasi}{4}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Instalasi di Linux}{4}{subsection.1.1.1}
-\contentsline {chapter}{\numberline {2}Dasar}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}Sintak \LaTeX }{6}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Spasi}{6}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Karakter Khusus}{7}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Group}{7}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Environment}{8}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}Commands}{8}{subsection.2.1.5}
-\contentsline {subsection}{\numberline {2.1.6}Komentar}{9}{subsection.2.1.6}
-\contentsline {section}{\numberline {2.2}Membuat Dokumen Pertama}{9}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Apa Arti dari Kode Sumber?}{10}{subsection.2.2.1}
-\contentsline {section}{\numberline {2.3}File}{10}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Membuat Nama File yang Baik}{10}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}File Tambahan}{10}{subsection.2.3.2}
-\contentsline {part}{II\hspace {1em}Elemen-elemen Umum}{12}{part.2}
-\contentsline {chapter}{\numberline {3}Struktur Dokumen}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Struktur Global}{13}{section.3.1}
-\contentsline {section}{\numberline {3.2}Preamble}{14}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Document class}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Package}{15}{subsection.3.2.2}
+\contentsline {part}{I\hspace {1em}Tahap Pengenalan}{1}{part.1}
+\contentsline {chapter}{\numberline {1}Apa itu \LaTeX ?}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Instalasi}{2}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Instalasi di Linux}{3}{subsection.1.1.1}
+\contentsline {chapter}{\numberline {2}Dasar}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Sintak \LaTeX }{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Spasi}{4}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Karakter Khusus}{5}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Group}{6}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Environment}{6}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Commands}{7}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.6}Komentar}{7}{subsection.2.1.6}
+\contentsline {section}{\numberline {2.2}Membuat Dokumen Pertama}{8}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Apa Arti dari Kode Sumber?}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}File}{9}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Membuat Nama File yang Baik}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}File Tambahan}{9}{subsection.2.3.2}
+\contentsline {part}{II\hspace {1em}Elemen-elemen Umum}{11}{part.2}
+\contentsline {chapter}{\numberline {3}Struktur Dokumen}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}Struktur Global}{12}{section.3.1}
+\contentsline {section}{\numberline {3.2}Preamble}{13}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Document class}{13}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Package}{14}{subsection.3.2.2}
 \contentsline {section}{\numberline {3.3}Lingkungan \emph {Document}}{17}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Top matter}{17}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Abstrak}{18}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Pengaturan Bab}{18}{subsection.3.3.3}
-\contentsline {subsubsection}{Penomoran Bab}{19}{section*.2}
+\contentsline {subsubsection}{Penomoran Bab}{20}{section*.2}
 \contentsline {subsection}{\numberline {3.3.4}Paragraph Biasa}{21}{subsection.3.3.4}
 \contentsline {subsection}{\numberline {3.3.5}Daftar Isi}{21}{subsection.3.3.5}
-\contentsline {subsubsection}{Kedalaman Bab}{21}{section*.3}
+\contentsline {subsubsection}{Kedalaman Bab}{22}{section*.3}
 \contentsline {section}{\numberline {3.4}Struktur Buku}{22}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Urutan Halaman}{23}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Pengantar Bab Dengan Penomoran Halaman Utama}{23}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.1}Urutan Halaman}{24}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Bab Pengenalan dengan Penomoran Halaman Bab Utama}{24}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Halaman Khusus}{25}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Daftar Pustaka}{26}{subsection.3.5.1}
+\contentsline {chapter}{\numberline {4}Pemformatan Teks}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Spasi}{27}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Spasi Baris}{27}{subsection.4.1.1}

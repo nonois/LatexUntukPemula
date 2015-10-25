@@ -17,6 +17,8 @@
 \usepackage[top=3cm, bottom=3cm, left=4cm, right=3cm]{geometry}
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
+\usepackage{setspace}
+\onehalfspacing
 
 %-------------------------------------------------------
 % SOURCE CODE Package
@@ -99,10 +101,13 @@
 \renewcommand{\listtablename}{Daftar Tabel}
 \renewcommand{\listfigurename}{Daftar Gambar}
 \setcounter{secnumdepth}{2}
+\frontmatter
+
 \maketitle
 %\newpage
 \tableofcontents
 
+\mainmatter
 \part{Tahap Pengenalan}%\index{Tahap Pengenalan}
 
 \chapter{Apa itu \LaTeX?}
@@ -674,7 +679,89 @@ Berikut ini urutan halaman untuk buku.
 \item Daftar Kata / Indeks
 \end{enumerate}
 
-\subsection{Pengantar Bab Dengan Penomoran Halaman Utama}
+\subsection{Bab Pengenalan dengan Penomoran Halaman Bab Utama}
 % LaTeX.pdf Hal 62
+Terkadang kita menginginkan bab pengenalan berada pada bab bagian utama atau mainmatter, sehingga bab pengenalan ini punya penomoran yang sama dengan bab bagian utama. Namun ketika kita meletakkan bagian awalan ini ke dalam mainmatter akan menjadi masalah ketika bagian ini tidak kita ingingkan untuk punya penomoran. Perhatikan kesalahan pada script berikut:
+\begin{lstlisting}
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+
+%% SALAH! %%
+\chapter*{Pengenalan}
+...
+\clearpage
+...
+
+\chapter{Bagian satu}
+...
+\end{lstlisting}
+
+Kesalahan pada kode di atas adalah penggunaan perintah \texttt{\textbackslash{}chapter*} menyebabkan bab tidak tercetak pada daftar isi. Ada trik untuk melakukannya yaitu dengan menentukan leftmark dan daftar isi secara manual.
+\begin{lstlisting}
+\chapter*{Pengenalan}
+\markboth{\MakeUppercase{Pengenalan}}{}
+\addcontentsline{toc}{chapter}{Pengenalan}
+\end{lstlisting}
+
+Agar lebih sederhana kita bisa membuat sebuah macro:
+\begin{lstlisting}
+\newcommand\intro{
+	\chapter*{#1}
+	\markboth{\MakeUppercase{#1}}{}
+	\addcontentsline{toc}{chapter}{#1}	
+	}
+...
+
+% Cara Penggunaan
+\intro{Pengenalan}
+\end{lstlisting}
+
+\section{Halaman Khusus}
+Tulisan-tuisan yang rumit biasanya memiliki halaman khusus diakhir dokumen seperti indeks, glosari, dan dafar pustaka. Ini lah yang dinamakan \emph{Halaman Khusus}.
+
+\subsection{Daftar Pustaka}
+Penelitian yang baik pasti punya daftar sumber referensi. LaTeX punya dua cara untuk memasukkan referensi tersebut ke dalam dokumen:
+\begin{itemize}
+\item Kita bisa menanamkannya sendiri. Lebih sederhana memang, namun cukup menyita waktu jika kita membuat beberapa tulisan yang punya subyek yang sama sehingga kita sering mengutip buku yang sama.
+\item Menyimpannya ke dalam file eksternal BibTeX kemudian menghubungkannya menggunakan perintah kedalam dokumen dengan menggunakan model Bibtex untuk mendefinisikan bagaimana mereka nampak. Dengan cara ini kita dapat membuat referensi basis data kecil yang mungkin digunakan kemudian menghubungkannya, kemudian biarkan LaTeX mengerjakannya.
+\end{itemize}
+
+\chapter{Pemformatan Teks}
+Pada sesi ini kita akan membahas teknik pemformatan teks pada dokumen. Pemformatan disini menekankan pada tampilan atau kenampakan seperti model teks, spasi, dll. Sedangkan pemformatan yang berupa paragraf dan layout halaman akan difokuskan pada kustomisasi kata dan kalimat.
+
+\section{Spasi}
+\subsection{Spasi Baris}
+Jika menginginkan spasi antar-baris yang lebih lebar, kita bisa merubah nilainya dengan meletakkan perintah
+\begin{lstlisting}
+\linespread{faktor}
+\end{lstlisting}
+ke dalam area preamble. Gunakan \texttt{\textbackslash{}linespread\{1.3\}} untuk spasi satu setengah, dan \texttt{\textbackslash{}linespread\{1.6\}} untuk spasi dobel. Nilai default-nya adalah 1.
+
+Selain perintah bawaan bisa juga menggunakan package \texttt{setspace}. Misal untuk merubah ke spasi \lq\lq satu setengah\rq\rq\ pada keseluruhan dokumen, namun tidak pada tempat yang tidak dibutuhkan(Misal catatan kaki, atau judul):
+\begin{lstlisting}
+\usepackage{setspace}
+%% Digunakan untuk keseluruhan dokumen
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+%\setstretch{1.1}
+\end{lstlisting}
+
+Selain perintah pada kode diatas terdapat perintah \texttt{singlespace}, \texttt{onehalfspace}, \texttt{doublespace} dan \texttt{spacing} yang digunakan untuk suatu lingkup saja atau \emph{environment}:
+\begin{lstlisting}
+Paragraf ini \\ punya nilai \\ spasi standar
+
+\begin{doublespace}
+Paragraf ini \\ punya spasi \\ dobel
+\end{doublespace}
+
+\begin{spacing}{2.5}
+Paragraf yang \\ ini spasinya \\ GEDE-GEDE
+\end{spacing}
+\end{lstlisting}
+
 
 \end{document}
