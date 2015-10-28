@@ -763,5 +763,18 @@ Paragraf yang \\ ini spasinya \\ GEDE-GEDE
 \end{spacing}
 \end{lstlisting}
 
+\subsection{Spasi Tak-Terpisah}
+Fitur ini digunakan antara dua kata yang tidak boleh dipisahkan oleh ganti baris. Selain itu jenis spasi ini tidak dapat diperlebar. LaTeX mengguanakan simbol '\texttt{\~{}}' sebagai spasi tak-terpisah ini. Penggunaannya biasa terdapat pada satuan unit atau mata-uang, serta inisial, dll. Contoh:
+\begin{lstlisting}
+Rp~10.000,00
+Dr.~Amir Said
+\end{lstlisting}
+
+\subsection{Spasi antara kata dan kalimat}
+Untuk mendapatkan perataan kanan yang baik, LaTeX menyertakan sejumlah spasi antar kata. Dan secara default memasukkan spasi lebih diakhir kalimat. Dan cara ini adalah bentuk model typsetter Bahasa Inggris lama. Pada kenyataannya kebanyakan aplikasi typesetter saat ini memberikan spasi yang sama.Spasi tambahan ini bisa dinon-aktifkan dengan menggunakan perintah
+\begin{lstlisting}
+\frenchspasing
+\end{lstlisting}
+Frenchspasing ini bisa dinon-aktifkan lagi dengan perintah \texttt{\textbackslash{}nonfrenchspasing}. TeX berasumsi bahwa kalimat berakhir dengan sebuah titik, tanda tanya atau tanda seru. Meskipun jika titik mengikuti huruf besar, tidak akan menjadikan LaTeX menganggap ini akhir kalimat, karena biasanya titik setelah huruf besar mengindikasikan suatu kependekan/singkatan. Sehingga pengecualian-pengecualian dari aturan-aturan diatas bisa diubah oleh penulis. sebuah backslash \lq\textbackslash{}\rq\ di depan spasi menjadikan spasi yang tidak akan diperbesar. Karakter \lq\~{}\rq\ mengindikasikan spasi yang tidak akan dipisah oleh enter/pergantian baris. 
 
 \end{document}
